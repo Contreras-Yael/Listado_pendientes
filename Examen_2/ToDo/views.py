@@ -4,10 +4,9 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import Pendiente
 from .forms import PendienteForm
 import requests
-from django.http import JsonResponse  # ya importado si seguiste sugerencias previas
+from django.http import JsonResponse
 from django.urls import reverse
 
-# Obtener datos del API externo (solo una vez o manualmente)
 def importar_api(request):
     response = requests.get('https://jsonplaceholder.typicode.com/todos')
     if response.status_code == 200:
