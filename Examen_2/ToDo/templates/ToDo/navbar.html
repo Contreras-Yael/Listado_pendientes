@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg" style="background-color: #f8f9fa;">
+  <div class="container justify-content-center">
+    <a class="navbar-brand me-4" href="{% url 'api_lista_pendientes' %}">ToDo</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item mx-1">
+          <a class="nav-link btn btn-outline-secondary rounded-pill px-3" aria-current="page" href="/">Inicio (API)</a>
+        </li>
+        <li class="nav-item mx-1">
+          <a class="nav-link btn btn-outline-secondary rounded-pill px-3" href="{% url 'lista_id' %}">Solo IDs</a>
+        </li>
+        <li class="nav-item mx-1">
+          <a class="nav-link btn btn-outline-secondary rounded-pill px-3" href="{% url 'lista_id_title' %}">IDs y Titles</a>
+        </li>
+        <li class="nav-item mx-1">
+          <a class="nav-link btn btn-outline-secondary rounded-pill px-3" href="{% url 'lista_no_resueltos' %}">No resueltos (ID y Title)</a>
+        </li>
+        <li class="nav-item mx-1">
+          <a class="nav-link btn btn-outline-secondary rounded-pill px-3" href="{% url 'lista_resueltos' %}">Resueltos (ID y Title)</a>
+        </li>
+        <li class="nav-item mx-1">
+          <a class="nav-link btn btn-outline-secondary rounded-pill px-3" href="{% url 'lista_id_user' %}">IDs y userID</a>
+        </li>
+        <li class="nav-item mx-1">
+          <a class="nav-link btn btn-outline-secondary rounded-pill px-3" href="{% url 'lista_resueltos_user' %}">Resueltos (ID y userID)</a>
+        </li>
+        <li class="nav-item mx-1">
+          <a class="nav-link btn btn-outline-secondary rounded-pill px-3" href="{% url 'lista_no_resueltos_user' %}">No resueltos (ID y userID)</a>
+        </li>
+        <li class="nav-item mx-1">
+          <a class="nav-link btn btn-outline-primary rounded-pill px-3" href="{% url 'lista_pendientes_local' %}">Mis Pendientes</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

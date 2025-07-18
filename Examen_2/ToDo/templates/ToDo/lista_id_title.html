@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>IDs y Titles</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+{% include 'ToDo/navbar.html' %}
+<div class="container py-4">
+  <h2 class="mb-4">IDs y Titles desde API</h2>
+  <ul class="list-group">
+    {% for p in pendientes %}
+      <li class="list-group-item"><strong>{{ p.id }}</strong>: {{ p.title }}</li>
+    {% empty %}
+      <li class="list-group-item text-muted">No hay pendientes.</li>
+    {% endfor %}
+  </ul>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

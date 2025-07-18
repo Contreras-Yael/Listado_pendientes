@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de Pendientes</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+{% include 'ToDo/navbar.html' %}
+<div class="container py-4">
+  <h2 class="mb-4">Lista</h2>
+  <ul class="list-group mb-3">
+    {% for p in pendientes %}
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        {{ p.title }}
+        <div>
+          {% if p.completed %}
+            <span class="badge bg-success me-2">Completado</span>
+            <a href="{% url 'marcar_pendiente' p.id %}" class="btn btn-warning btn-sm">Marcar como pendiente</a>
+          {% else %}
+            <span class="badge bg-danger me-2">Pendiente</span>
+            <a href="{% url 'marcar_completado' p.id %}" class="btn btn-success btn-sm">Marcar como completado</a>
+          {% endif %}
+        </div>
+      </li>
+    {% empty %}
+      <li class="list-group-item text-muted">No hay pendientes.</li>
+    {% endfor %}
+  </ul>
+  <a href="{% url 'crear_pendiente' %}" class="btn btn-primary">Nuevo</a>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
